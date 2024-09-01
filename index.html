@@ -1,38 +1,92 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi Página Personal</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Vincula el archivo CSS -->
+    <title>My Art Gallery</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
-        <h1>Bienvenido a Mi Página Personal</h1>
+        <h1>Welcome to my art gallery!</h1>
+        <nav>
+            <ul>
+                <li><a href="#about" onclick="showSection('about')">About Me</a></li>
+                <li><a href="#gallery" onclick="showSection('gallery')">Gallery</a></li>
+                <li><a href="#contact" onclick="showSection('contact')">Contact</a></li>
+            </ul>
+        </nav>
     </header>
-    <nav>
-        <ul>
-            <li><a href="#sobre-mi">Sobre Mí</a></li>
-            <li><a href="#proyectos">Proyectos</a></li>
-            <li><a href="#contacto">Contacto</a></li>
-        </ul>
-    </nav>
-    <main>
-        <section id="sobre-mi">
-            <h2>Sobre Mí</h2>
-            <p>Escribe una breve biografía.</p>
-        </section>
-        <section id="proyectos">
-            <h2>Proyectos</h2>
-            <p>Detalles de tus proyectos.</p>
-        </section>
-    </main>
+    
+    <section id="about" class="content-section">
+        <h2>About Me</h2>
+        <img src="C:/Users/prisc/Desktop/webpaint/images/mifoto.jpg" alt="Priscila Cano" class="about-photo">
+        <p>I am Priscila Cano, an artist dedicated to expressing emotions through my artwork. My work encompasses vibrant, colorful paintings that explore the joy of living. I am inspired by the beauty of nature, the complexity of human emotions, and the stories that shape our lives. Each piece reflects a unique perspective, inviting you to see the world through my eyes. On this website, you will find a curated collection of my most recent works. For me, art is a form of communication, a way to express thoughts and emotions that words alone cannot capture. I hope my art resonates with you, evokes emotions, and maybe even inspires you to see the world from a new perspective.</p>
+    </section>
+
+    <section id="gallery" class="content-section" style="display:none;">
+        <h2>Gallery</h2>
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="C:\Users\prisc\Desktop\webpaint\images\1.jpg" alt="Floating in Love (2022)" onclick="showDescription('desc1')">
+            </div>
+            <div class="gallery-item">
+                <img src="C:\Users\prisc\Desktop\webpaint\images\2.jpg" alt="Unity in Diversity (2020)" onclick="showDescription('desc2')">
+            </div>
+            <div class="gallery-item">
+                <img src="C:\Users\prisc\Desktop\webpaint\images\3.jpg" alt="Majesty at Dusk" onclick="showDescription('desc3')">
+            </div>
+            <div class="gallery-item">
+                <img src="C:\Users\prisc\Desktop\webpaint\images\4.jpg" alt="Underwater Play" onclick="showDescription('desc4')">
+            </div>
+        </div>
+        <div class="gallery-description" id="desc1" style="display:none;">
+            <h3>Floating in Love (2022)</h3>
+            <p>This painting captures a young woman in a colorful dress, seemingly floating in the air, embodying the sensation of falling in love. Her expression is one of joy and serenity, as if she is weightless, carried by the lightness of her emotions. The vibrant colors of her dress swirl around her, creating a sense of movement and freedom, reflecting the boundless and uplifting feeling of love. Painted in 2022, this artwork invites the viewer to experience the enchanting moment when love makes us feel like we are floating.</p>
+        </div>
+        <div class="gallery-description" id="desc2" style="display:none;">
+            <h3>Unity in Diversity (2020)</h3>
+            <p>“Unity in Diversity” is a striking painting that fills each continent with unique mandalas, intricately detailed to reflect the uniqueness of each region. The mandalas symbolize the rich diversity of cultures, traditions, and histories that define our world. Despite differences, they are all connected, set against a vibrant, colorful background that represents the joy and harmony that comes from embracing our shared humanity. This artwork is a celebration of unity, showing that even with our diverse backgrounds, there is beauty in coming together as one global family.</p>
+        </div>
+        <div class="gallery-description" id="desc3" style="display:none;">
+            <h3>Majesty at Dusk</h3>
+            <p>"Majesty at Dusk" captures the serene beauty of an elephant's silhouette against a bright orange sunset. The elephant, a symbol of strength, wisdom, and grace, stands peacefully, embodying a quiet power amidst the fading light of day. Painted in 2022, this artwork invites the viewer to reflect on the harmonious connection between nature and its creatures, highlighting the elephant's calm and majestic presence at the end of the day.</p>
+        </div>
+        <div class="gallery-description" id="desc4" style="display:none;">
+            <h3>Underwater Play</h3>
+            <p>"Underwater Play" is a lively and whimsical painting that brings to life a group of cheerful fish swimming joyfully among vibrant corals on the ocean floor. Each fish, with its bright colors and playful expressions, adds a sense of fun and animation to the scene, capturing the carefree spirit of marine life. The corals, in various shapes and hues, create a dynamic underwater landscape that enhances the playful atmosphere. Painted in 2022, this artwork invites viewers into a world of underwater delight, where the beauty of the ocean and its inhabitants is celebrated in a fun and animated style.</p>
+        </div>
+    </section>
+
+    <section id="contact" class="content-section" style="display:none;">
+        <h2>Contact:</h2>
+        <p>priscilacanoart@gmail.com</p>
+    </section>
+
     <footer>
-        <p>© 2024 Mi Nombre</p>
+        <p>&copy; 2024 Priscila Cano. All rights reserved.</p>
     </footer>
 
-    <!-- (Opcional) Si usas JavaScript, vincula el archivo aquí -->
-    <script src="script.js"></script>
+    <script>
+        function showSection(sectionId) {
+            // Ocultar todas las secciones
+            var sections = document.getElementsByClassName('content-section');
+            for (var i = 0; i < sections.length; i++) {
+                sections[i].style.display = 'none';
+            }
+            // Mostrar la sección seleccionada
+            document.getElementById(sectionId).style.display = 'block';
+        }
+
+        function showDescription(descId) {
+            // Ocultar todas las descripciones
+            var descriptions = document.getElementsByClassName('gallery-description');
+            for (var i = 0; i < descriptions.length; i++) {
+                descriptions[i].style.display = 'none';
+            }
+            // Mostrar la descripción seleccionada
+            document.getElementById(descId).style.display = 'block';
+        }
+    </script>
 </body>
 </html>
-

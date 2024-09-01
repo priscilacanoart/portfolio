@@ -17,6 +17,7 @@ nav ul {
     list-style: none;
     padding: 0;
     text-align: center;
+    margin: 0;
 }
 
 nav ul li {
@@ -35,12 +36,34 @@ section {
     color: #6a0dad; /* Lila oscuro */
 }
 
-footer {
-    background-color: #6a0dad; /* Lila oscuro */
-    color: #f3e5f5; /* Lila claro */
-    text-align: center;
-    padding: 10px;
-    position: fixed;
-    width: 100%;
-    bottom: 0;
+section h2 {
+    color: #6a0dad; /* Lila oscuro */
 }
+
+.about-photo {
+    max-width: 150px;
+    height: auto;
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: auto;
+    border: 2px solid #6a0dad; /* Borde lila oscuro */
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.gallery-item img:hover {
+    transform: scale(1.05);
+}
+
+
