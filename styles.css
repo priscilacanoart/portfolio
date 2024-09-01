@@ -1,0 +1,46 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f3e5f5; /* Lila claro */
+}
+
+header {
+    background-color: #6a0dad; /* Lila oscuro */
+    color: #f3e5f5; /* Lila claro */
+    padding: 20px;
+    text-align: center;
+}
+
+nav ul {
+    background-color: #6a0dad; /* Lila oscuro */
+    list-style: none;
+    padding: 0;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 10px;
+}
+
+nav ul li a {
+    color: #f3e5f5; /* Lila claro */
+    text-decoration: none;
+}
+
+section {
+    padding: 20px;
+    background-color: #f3e5f5; /* Lila claro */
+    color: #6a0dad; /* Lila oscuro */
+}
+
+footer {
+    background-color: #6a0dad; /* Lila oscuro */
+    color: #f3e5f5; /* Lila claro */
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
